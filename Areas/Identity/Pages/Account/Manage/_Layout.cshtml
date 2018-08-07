@@ -1,0 +1,27 @@
+﻿@{ 
+    Layout = "/Areas/Identity/Pages/Account/Manage/_Layout.cshtml";
+    //Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage your account</h2>
+
+<div>
+    <h4>Change your account settings</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            @*@await Html.PartialAsync(Path = "/Areas/Identity/Pages/Account/Manage/", "_ManageNav")*@
+            @*<partial name="~/Areas/Identity/Pages/Account/Manage/_ManageNav"/>*@
+            @await Html.PartialAsync("~/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml")
+            @*<partial name="_ManageNav.cshtml"/>*@
+            @*<partial name="/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"/>*@
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
